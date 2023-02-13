@@ -2,6 +2,8 @@ package net.nerdcraftmc.mobscaling;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,6 +28,8 @@ public class MobScaling {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            Events.biomeMap(EntityType.ZOMBIE, Biomes.DESERT, 0.5f);
+            System.out.println("Changed Attribute List: " + Events.changeAttributes);
         }
     }
 }
